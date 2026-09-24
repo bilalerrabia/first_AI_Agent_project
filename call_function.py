@@ -18,10 +18,6 @@ def call_function(tool_call, verbose: bool = False) -> dict:
     function_name = tool_call.function.name
     function_args = json.loads(tool_call.function.arguments or "{}")
 
-    # if verbose:
-        # print(f" - Calling function: {function_name}({function_args})")
-    # else:
-        # print(f" - Calling function: {function_name}")
     print(f"Assistant: I want to call {function_name}...")
 
     if function_name not in function_map:
